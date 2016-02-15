@@ -365,7 +365,7 @@
                     <plugin>
                         <artifactId>maven-failsafe-plugin</artifactId>
                         <configuration>
-                            <excludedGroups>org.flywaydb.core.DbCategory$DB2zOS,org.flywaydb.core.DbCategory$Redshift,org.flywaydb.core.DbCategory$SolidDB,org.flywaydb.core.DbCategory$Phoenix</excludedGroups>
+                            <excludedGroups>org.flywaydb.core.DbCategory$DB2zOS,org.flywaydb.core.DbCategory$Redshift,org.flywaydb.core.DbCategory$SolidDB,org.flywaydb.core.DbCategory$Phoenix,org.flywaydb.core.DbCategory$DB2iSeries</excludedGroups>
                         </configuration>
                     </plugin>
                 </plugins>
@@ -395,7 +395,32 @@
                     <plugin>
                         <artifactId>maven-failsafe-plugin</artifactId>
                         <configuration>
-                            <excludedGroups>org.flywaydb.core.DbCategory$Vertica,org.flywaydb.core.DbCategory$Redshift,org.flywaydb.core.DbCategory$SolidDB,org.flywaydb.core.DbCategory$Phoenix</excludedGroups>
+                            <excludedGroups>org.flywaydb.core.DbCategory$Vertica,org.flywaydb.core.DbCategory$Redshift,org.flywaydb.core.DbCategory$SolidDB,org.flywaydb.core.DbCategory$Phoenix,org.flywaydb.core.DbCategory$DB2iSeries</excludedGroups>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>DB2iSeriesDBTest</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <dependencies>
+                <dependency>
+                    <groupId>net.sf.jt400</groupId>
+                    <artifactId>jt400</artifactId>
+                    <version>7.5.1</version>
+                    <classifier>jdk6</classifier>
+                    <scope>test</scope>
+                </dependency>
+            </dependencies>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-failsafe-plugin</artifactId>
+                        <configuration>
+                            <excludedGroups>org.flywaydb.core.DbCategory$Vertica,org.flywaydb.core.DbCategory$Redshift,org.flywaydb.core.DbCategory$SolidDB,org.flywaydb.core.DbCategory$Phoenix,org.flywaydb.core.DbCategory$DB2zOS</excludedGroups>
                         </configuration>
                     </plugin>
                 </plugins>
@@ -418,7 +443,7 @@
                     <plugin>
                         <artifactId>maven-failsafe-plugin</artifactId>
                         <configuration>
-                            <excludedGroups>org.flywaydb.core.DbCategory$Vertica,org.flywaydb.core.DbCategory$Redshift,org.flywaydb.core.DbCategory$DB2zOS,org.flywaydb.core.DbCategory$Phoenix</excludedGroups>
+                            <excludedGroups>org.flywaydb.core.DbCategory$Vertica,org.flywaydb.core.DbCategory$Redshift,org.flywaydb.core.DbCategory$DB2zOS,org.flywaydb.core.DbCategory$Phoenix,org.flywaydb.core.DbCategory$DB2iSeries</excludedGroups>
                         </configuration>
                     </plugin>
                 </plugins>
@@ -450,7 +475,7 @@
                         <artifactId>maven-failsafe-plugin</artifactId>
                         <configuration>
                             <!-- Exclude everything but Phoenix -->
-                            <excludedGroups>org.flywaydb.core.DbCategory$CommercialDB,org.flywaydb.core.DbCategory$ContributorSupportedDB,org.flywaydb.core.DbCategory$OpenSourceDB,org.flywaydb.core.DbCategory$Derby,org.flywaydb.core.DbCategory$H2,org.flywaydb.core.DbCategory$HSQL,org.flywaydb.core.DbCategory$SQLite</excludedGroups>
+                            <excludedGroups>org.flywaydb.core.DbCategory$CommercialDB,org.flywaydb.core.DbCategory$ContributorSupportedDB,org.flywaydb.core.DbCategory$OpenSourceDB,org.flywaydb.core.DbCategory$Derby,org.flywaydb.core.DbCategory$H2,org.flywaydb.core.DbCategory$HSQL,org.flywaydb.core.DbCategory$SQLite,org.flywaydb.core.DbCategory$DB2iSeries</excludedGroups>
                         </configuration>
                     </plugin>
                     <plugin>
