@@ -410,8 +410,8 @@
                 <dependency>
                     <groupId>net.sf.jt400</groupId>
                     <artifactId>jt400</artifactId>
-                    <version>7.5.1</version>
-                    <classifier>jdk6</classifier>
+                    <version>8.7</version>
+                    <classifier>jdk8</classifier>
                     <scope>test</scope>
                 </dependency>
             </dependencies>

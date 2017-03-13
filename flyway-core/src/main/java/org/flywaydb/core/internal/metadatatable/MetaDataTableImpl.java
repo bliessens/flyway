@@ -1,12 +1,12 @@
 /**
  * Copyright 2010-2016 Boxfuse GmbH
- *
+ * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
- *         http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -28,7 +28,10 @@ import org.flywaydb.core.internal.util.scanner.classpath.ClassPathResource;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Supports reading and writing to the metadata table.
@@ -166,6 +169,7 @@ public class MetaDataTableImpl implements MetaDataTable {
      * @return The installed rank.
      */
     private int calculateInstalledRank() throws SQLException {
+        //TODO select max('installed_rand') from testadm."schema_version" works fine
         int currentMax = jdbcTemplate.queryForInt("SELECT MAX(" + dbSupport.quote("installed_rank") + ")"
                 + " FROM " + table);
         return currentMax + 1;
